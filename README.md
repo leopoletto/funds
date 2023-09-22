@@ -155,7 +155,7 @@ curl --request GET \
                     "name":"Herman-Bernhard",
                     "created_at":"2023-09-22T03:33:02.000000Z",
                     "updated_at":"2023-09-22T03:33:02.000000Z"
-                },
+                }
             ],
             "companies":[
                 {
@@ -163,7 +163,7 @@ curl --request GET \
                     "name":"Reina Labadie",
                     "created_at":"2023-09-22T03:33:02.000000Z",
                     "updated_at":"2023-09-22T03:33:02.000000Z"
-                },
+                }
             ],
             "fund_manager":{
                 "id":15,
@@ -221,41 +221,42 @@ Run: `sail artisan test`
 ### Example
 
 ```
-PASS  Tests\Feature\AuthenticationTest
-✓ user get an api token when credentials match                                                                                        1.12s
-✓ user authentication fails when credentials dont match                                                                               0.02s
 
-PASS  Tests\Feature\DuplicateFundRegistrationTest
-✓ duplicate fund registration when a warning event is dispatched                                                                      0.02s
-
-PASS  Tests\Feature\FundCreationTest
-✓ fund can be created                                                                                                                 0.03s
-✓ duplicate fund creation dispatch an event                                                                                           0.02s
-
-PASS  Tests\Feature\FundDeletionTest
-✓ fun can be deleted                                                                                                                  0.02s
-
-PASS  Tests\Feature\FundReconciliationTest
-✓ duplicate funds can be reconciled                                                                                                   0.03s
-
-PASS  Tests\Feature\FundSearchTest
-✓ funds can be listed                                                                                                                 0.15s
-✓ funds can be searched by name                                                                                                       0.04s
-✓ funds can be searched by start year                                                                                                 0.03s
-✓ funds can be searched by fund manager id                                                                                            0.02s
-
-PASS  Tests\Feature\FundSeedingTest
-✓ funds can be seeded                                                                                                                 0.06s
-✓ funds can be seeded with some duplicate                                                                                             0.11s
-
-PASS  Tests\Feature\FundUpdateTest
-✓ fund can be updated                                                                                                                 0.02s
-
-PASS  Tests\Feature\UserRegistrationTest
-✓ user can be registered                                                                                                              0.03s
-
-Tests:    15 passed (45 assertions)
-Duration: 1.91s
+    PASS  Tests\Feature\AuthenticationTest
+    ✓ user get an api token when credentials match                                                                                        1.12s
+    ✓ user authentication fails when credentials dont match                                                                               0.02s
+    
+    PASS  Tests\Feature\DuplicateFundRegistrationTest
+    ✓ duplicate fund registration when a warning event is dispatched                                                                      0.02s
+    
+    PASS  Tests\Feature\FundCreationTest
+    ✓ fund can be created                                                                                                                 0.03s
+    ✓ duplicate fund creation dispatch an event                                                                                           0.02s
+    
+    PASS  Tests\Feature\FundDeletionTest
+    ✓ fun can be deleted                                                                                                                  0.02s
+    
+    PASS  Tests\Feature\FundReconciliationTest
+    ✓ duplicate funds can be reconciled                                                                                                   0.03s
+    
+    PASS  Tests\Feature\FundSearchTest
+    ✓ funds can be listed                                                                                                                 0.15s
+    ✓ funds can be searched by name                                                                                                       0.04s
+    ✓ funds can be searched by start year                                                                                                 0.03s
+    ✓ funds can be searched by fund manager id                                                                                            0.02s
+    
+    PASS  Tests\Feature\FundSeedingTest
+    ✓ funds can be seeded                                                                                                                 0.06s
+    ✓ funds can be seeded with some duplicate                                                                                             0.11s
+    
+    PASS  Tests\Feature\FundUpdateTest
+    ✓ fund can be updated                                                                                                                 0.02s
+    
+    PASS  Tests\Feature\UserRegistrationTest
+    ✓ user can be registered                                                                                                              0.03s
+    
+    Tests:    15 passed (45 assertions)
+    Duration: 1.91s
 ```
 
 ## Trade-offs
