@@ -51,8 +51,8 @@ There are two ways of seeding the database:
 Seed the database: `./vendor/bin/sail artisan db:seed`
 
 #### Via API
-> You can specify the number of funds you wish to be created, and how many of them with duplicate funds.
->
+
+You can specify the number of funds you wish to be created, and how many of them with duplicate funds.
 ```CURL
 curl --request POST \
   --url http://localhost/api/funds/seed \
@@ -67,6 +67,7 @@ curl --request POST \
 ```
 
 ### Create Fund
+
 > Save one id future use
 
 ```CURL
@@ -259,3 +260,16 @@ Tests:    15 passed (45 assertions)
 Duration: 1.91s
 ```
 
+## Trade-offs
+
+I chose not to create services and repositories at this point given the expected time to complete.
+
+The reconcile method is just a hypothesis of how it could work.
+
+The event is being handled by an internal listener that registers the potential duplicate fund in a specific table. 
+But it could also be published in a message-broker.
+
+The seed method uses factories to simulate the process. 
+I assume the real data would come from a parsed document or spreadsheet. 
+
+The error handling is Laravel default, but thinking about a larger application we could add custom exceptions and create specific codes mapping the errors. 
