@@ -2,10 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Http\Resources\FundAliasResource;
-use App\Http\Resources\FundResource;
 use App\Models\Fund;
-use App\Models\FundAlias;
 use App\Models\FundManager;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;

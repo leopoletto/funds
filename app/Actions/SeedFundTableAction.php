@@ -17,7 +17,9 @@ class SeedFundTableAction
         $companies = Company::factory(30)->create();
 
         $funds = Fund::factory($amount)
-            ->sequence(fn(Sequence $sequence) => ['fund_manager_id' => $fundManagers[rand(0, 4)]])
+            ->sequence(fn(Sequence $sequence) => [
+                'fund_manager_id' => $fundManagers[rand(0, 4)]
+            ])
             ->has(FundAlias::factory()->count(rand(1, 5)))
             ->afterCreating(function (Fund $fund) use ($companies) {
                 $fund->companies()->attach($companies->random(rand(1, 30))->pluck('id'));
