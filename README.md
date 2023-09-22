@@ -12,7 +12,7 @@ Run the migration: `./vendor/bin/sail artisan migrate`
 
 ## Running the API
 
-> Import the `Insomnia.json` file to Insomnia app which contains all the endpoints in the correct order.
+Import the `Insomnia.json` file to Insomnia app which contains all the endpoints in the correct order.
 
 ###  Register user
 
@@ -28,7 +28,8 @@ curl --request POST \
 }'
 ```
 ### Login user
-> Use the e-mail and password (It automatically fills the token value for the next requests)
+
+Use the e-mail and password (It automatically fills the token value for the next requests)
 
 ```CURL
 curl --request POST \
@@ -67,8 +68,6 @@ curl --request POST \
 ```
 
 ### Create Fund
-
-> Save one id future use
 
 ```CURL
 curl --request POST \
@@ -212,8 +211,7 @@ curl --request POST \
 	"funds": [45,46]
 }'
 ```
-Now all the companies (merge) and aliases of 45 and 46 will belong to 40.  
-The duplicate records will be deleted. 
+Now all the companies (merge) and aliases of 45 and 46 will belong to 40. The duplicate records will be deleted. 
 
 
 ## Testing
