@@ -1,3 +1,49 @@
+# Funds
+
+Canoe’s business is centered around various applications that automate workflows for the administration of investment funds.
+
+To do this efficiently, we need a master database that can be shared by these applications as a single source of truth for these investment funds.
+
+This dataset is constantly changing and requires some amount of manual curation by a data quality team using a web application that is built for the purpose of maintaining this data.
+
+This exercise requires building a data model and back-end service to support a couple of the basic use cases for this web application.
+
+Fund Records can be created, read, updated, and deleted manually in this application.
+
+There also will be back-end processes that are creating new records automatically.
+
+Some of the automatically created records will be duplicates that will need to be manually reconciled.
+
+
+## ER Diagram
+
+```mermaid
+erDiagram
+COMPANY {
+string(255) name 
+}
+DUPLICATE-FUND {
+}
+FUND-ALIAS {
+string(255) name
+}
+FUND-MANAGER {
+string(255) name
+}
+FUND {
+string(255) name
+year start_year
+}
+
+FUND }|..|{ FUND-ALIAS : has
+FUND-MANAGER ||--o{ FUND : manages
+DUPLICATE-FUND ||--|{ COMPANY : contains
+DUPLICATE-FUND ||--|{ FUND : contains
+COMPANY-FUND ||--|{ COMPANY : includes
+COMPANY-FUND ||--|{ FUND : "is managed by"
+
+```
+
 ## Setup
 
 Clone the repository: `git clone git@github.com:leopoletto/funds.git leopoletto`
